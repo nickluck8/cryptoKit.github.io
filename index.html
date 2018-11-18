@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slider</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+<!--<button class="btn js-addCat" type="button">Create Cat</button>-->
+<header class="header">
+
+    <div class="header-container">
+        <div class="header-logo">
+            <a class="header-icon" href="/">
+                <span class="header-img">
+                </span>
+            </a>
+            <h1 class="header-text">CryptoKitties</h1>
+        </div>
+
+        <div class="header-menu">
+            <nav class="header-nav">
+                <ul class="header-list">
+                    <li class="list-item"><a class="item-link">Catalogue</a></li>
+                    <li class="list-item"><a class="item-link">Search</a></li>
+                    <li class="list-item">
+                        <a class="item-link" onclick="dropBtn()">
+                            More
+                            <div id="myDropdown" class="dropdown-content">
+                                <a href="#blog">Blog</a>
+                                <a href="#about">About</a>
+                                <a href="#events">Events</a>
+                            </div>
+                        </a>
+                    </li><!--TODO dropdown-->
+                </ul>
+            </nav>
+            <div class="header-btn">
+                <!--<button class="start-btn">Start</button>-->
+            </div>
+        </div>
+    </div>
+
+</header>
+<div class="cats_plate">
+</div>
+<template id="cat-temp">
+    <div class="cats-card">
+        <div class="cat">
+            <div class="cats-card__price">for sale <span class="price"></span></div>
+            <img src="https://img.cryptokitties.co/0x06012c8cf97bead5deae237070f9587f8e7a266d/1082340.svg" alt="kitten"
+                 class="img">
+            <button class="cart">add to cart</button>
+        </div>
+    </div>
+</template>
+
+<button class="modal-btn">Open modal</button>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <div class="shopping-cart">
+            <div class="shopping-cart-title">
+                Shopping Cart
+            </div>
+            <button class="btn-clear">clear cart</button>
+        </div>
+
+
+        <template id="shopping-cart-template">
+            <div class="shopping-cart-container">
+                <img class="cat-img" src="" alt="">
+                <div class="shopping-cart-quantity">
+                    <label for="quantity" class="label-quantity">Quantity: </label>
+                    <input class="quantity" id="quantity" name="quantity">
+                </div>
+
+                <div class="shopping-cart-price">
+                    <p class="cart-price"></p>
+                </div>
+
+                <button class="btn-shopping-cart">remove</button>
+            </div>
+        </template>
+    </div>
+</div>
+<button type="button" onclick="addNewCatsFromApi()" class="addNew">add new</button>
+<script src="script/script.js"></script>
+</body>
+</html>
